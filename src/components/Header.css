@@ -1,0 +1,25 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: rgb(239, 244, 248);
+}
+
+.Header .menu {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.Header .menu a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: ease-in-out 0.3s;
+}
+
+.Header .menu a:hover {
+    transform: scale(1.1);
+    color: brown;
+}

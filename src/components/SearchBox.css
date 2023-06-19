@@ -1,0 +1,13 @@
+.SearchBox,
+.SearchBox .icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.SearchBox .icon {
+    width: 8%;
+}
+
+.SearchBox .icon span {
+    cursor: pointer;
+}
