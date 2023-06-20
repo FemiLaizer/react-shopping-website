@@ -2,7 +2,7 @@ export const category = [
     {
         id: 1,
         img: require("../img-home/Headphones.jpg"),
-        name: "Headphone",
+        name: "Headphones",
         details: `Perfect music listening device.`,
         price: 4000,
         qty: 1
@@ -10,7 +10,7 @@ export const category = [
     {
         id: 2,
         img: require("../img-home/Laptop.jpeg"),
-        name: "Laptop",
+        name: "Laptops",
         details: `For tech creativity.`,
         price: 4000,
         qty: 1
@@ -18,7 +18,7 @@ export const category = [
     {
         id: 3,
         img: require("../img-home/bag.jpg"),
-        name: "Headphone",
+        name: "Bags",
         details: `Perfect music listening device.`,
         price: 4000,
         qty: 1
@@ -26,7 +26,7 @@ export const category = [
     {
         id: 4,
         img: require("../img-home/sneaker.jpg"),
-        name: "Headphone",
+        name: "Sneakers",
         details: `Perfect music listening device.`,
         price: 4000,
         qty: 1
@@ -34,7 +34,7 @@ export const category = [
     {
         id: 5,
         img: require("../img-home/top-shirt.jpg"),
-        name: "Headphone",
+        name: "Shirts",
         details: `Perfect music listening device.`,
         price: 4000,
         qty: 1
@@ -42,7 +42,7 @@ export const category = [
     {
         id: 6,
         img: require("../img-home/tv.jpeg"),
-        name: "Headphone",
+        name: "Appliances",
         details: `Perfect music listening device.`,
         price: 4000,
         qty: 1

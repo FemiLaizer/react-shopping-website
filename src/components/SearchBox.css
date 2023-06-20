@@ -1,6 +1,7 @@
 .SearchBox,
 .SearchBox .icon {
     display: flex;
+    background-color: rgb(250, 244, 190);
     justify-content: space-between;
 }
 

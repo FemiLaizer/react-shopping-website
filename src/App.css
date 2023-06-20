@@ -28,10 +28,43 @@
   color: #61dafb;
 }
 
+.App .cartegory {
+  /* border: 1px solid black; */
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.App .cartegory-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App .cartegory-selection h4 {
+  margin: 0.85rem;
+}
+
+.App .cartegory-selection h4 a {
+  text-decoration: none;
+  color: #555454;
+}
+
+.App .cartegory-selection span {
+  width: 200px;
+  height: 1.2px;
+  background-color: #dfe0e2;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

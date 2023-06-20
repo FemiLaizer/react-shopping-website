@@ -1,0 +1,28 @@
+.Banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+    height: 300px;
+    /* border: 1px solid black; */
+}
+
+.Banner .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width: 950%;
+    height: 100%;
+    /* background-color: #b48319; */
+    background-color: rgb(226, 174, 61);
+    /* border: 1px solid red; */
+}
+
+.Banner .cartbox {
+    width: 28%;
+    height: 100%;
+
+    border: 1px solid red;
+}

@@ -1,0 +1,28 @@
+.Button {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 7px 16px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    text-transform: uppercase;
+}
+
+.Button:focus {
+    outline: none;
+}
+
+.Button:active {
+    transform: scale(0.98);
+}
+
+.Button-block {
+    display: block;
+    width: 100%;
+}
