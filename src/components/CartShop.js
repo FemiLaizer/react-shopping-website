@@ -1,8 +1,8 @@
 export const category = [
     {
         id: 1,
-        img: require("../img-home/Headphones.jpg"),
-        name: "Headphones",
+        img: require("../img-home/sneaker.jpg"),
+        name: "Sneakers",
         details: `Perfect music listening device.`,
         price: 4000,
         qty: 1
@@ -17,16 +17,16 @@ export const category = [
     },
     {
         id: 3,
-        img: require("../img-home/bag.jpg"),
-        name: "Bags",
+        img: require("../img-home/Headphones.jpg"),
+        name: "Headphones",
         details: `Perfect music listening device.`,
         price: 4000,
         qty: 1
     },
     {
         id: 4,
-        img: require("../img-home/sneaker.jpg"),
-        name: "Sneakers",
+        img: require("../img-home/bag.jpg"),
+        name: "Bags",
         details: `Perfect music listening device.`,
         price: 4000,
         qty: 1

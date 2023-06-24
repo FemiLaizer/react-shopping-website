@@ -1,17 +1,22 @@
 import './Header.css'
 
-function Header({ icon, logo, home, product, about, contact, cart, user }) {
+function Header({ showCartPrice, icon, logo, home, product, about, contact, cart, user }) {
+
+    // const showCartPrice = (e) => {
+    //     console.log("showing Cart Price");
+    // }
+
     return (
         <div className="Header">
             <p>{logo}</p>
-            <p className='menu'>
-                <a href='./'>{home}</a>
-                <a href='./'>{product}</a>
-                <a href='./'>{about}</a>
-                <a href='./'>{contact}</a>
-                <a href='./'>{cart}</a>
-                <a href='./'>{user}</a>
-            </p>
+            <div className='menu'>
+                <p>{home}</p>
+                <p>{product}</p>
+                <p>{about}</p>
+                <p>{contact}</p>
+                <p onClick={(e) => showCartPrice(e.currentTarget)}>{cart}</p>
+                <p>{user}</p>
+            </div>
         </div>
     );
 }

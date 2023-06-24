@@ -17,6 +17,7 @@ const Button = ({ color, text, btnClick }) => {
 // You can use these as default
 Button.defaultProps = {
     color: 'steelblue',
+    text: 'Go To Payment',
 }
 
 Button.propTypes = {

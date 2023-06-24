@@ -1,0 +1,14 @@
+.Cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 200px;
+    height: 400px;
+    z-index: 1;
+    position: absolute;
+    top: 34px;
+    right: 0;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}

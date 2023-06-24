@@ -1,11 +1,10 @@
-import React from 'react'
 import './SearchBox.css'
 
 const SearchBox = () => {
     return (
         <div className='SearchBox'>
             <p>
-                <input type='search' placeholder='Sort by popularity' />
+                <input className='search' type='search' placeholder='Sort by popularity' />
             </p>
             <p className='icon'>
                 <span>D!</span>

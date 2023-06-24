@@ -1,8 +1,9 @@
 .Cartegory {
     /* border: 1px solid black; */
-    width: 27%;
+    width: 25%;
     height: 350px;
-    margin-bottom: 20px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
     cursor: pointer;
     border-radius: 0.65rem;
     box-shadow: 0.5px 0.2px 8px 0.3px rgb(138, 137, 137);

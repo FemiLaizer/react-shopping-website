@@ -9,7 +9,7 @@ const CartArea = () => {
                 <div className='banner-content'>
                     <h1>Shopping-Cart-Website</h1>
                     <p>Buy anything at discount price. Shopping and shipping at your convinience.</p>
-                    <Button color={"#b48319"} text="Shop Now" />
+                    <Button color={"#f5963d"} text="Shop Now" />
                 </div>
             </div>
 
