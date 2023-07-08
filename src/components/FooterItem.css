@@ -21,7 +21,7 @@
 @media (max-width: 768px) {
 
 
-    .Footer-item:nth-child(1) {
+    .Footer-item:nth-child(3) {
         display: none;
     }
 }
