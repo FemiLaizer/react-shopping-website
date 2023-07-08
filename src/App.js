@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import SearchBox from './components/SearchBox';
 import Banner from './components/Banner';
 import Items from './components/Items';
 import About from './components/About';
@@ -14,7 +13,7 @@ import { products } from './components/Products'
 import Cartegory from './components/Cartegory';
 
 function App() {
-  const [showItem, setshowItem] = useState(false)
+  const [showItem, setshowItem] = useState(true)
   const [showPrice, setshowPrice] = useState(false)
 
   let [totalPrice, settotalPrice] = useState(0)
@@ -33,12 +32,13 @@ function App() {
     settotalPrice(totalPrice)
   }
 
+  const [cartegoryName, setCartegoryName] = useState("")
+
   return (
     <Router>
       <div className="App">
-        <Header showCartPrice={showCart} logo="LOGO" home="Home" product="Product" about="About" contact="Contact" cart="Cart" user="User" />
+        <Header showCartPrice={showCart} logo="SHoLOGO" home="Home" product="Product" about="About" contact="Contact" cart="Cart" user="User" />
         {showPrice && <Cart cartPrice={cartPrice()} />}
-        <SearchBox />
 
         <Banner />
         <div className='cartegory-selection'>
@@ -50,10 +50,10 @@ function App() {
         </div>
         <div className='cartegory'>
           {category.map(item => (
-            <Cartegory key={item.id} {...item} showCart={showCart} />
+            <Cartegory key={item.id} {...item} showCart={showCart} setCartegoryName={setCartegoryName} />
           ))}
         </div>
-        <h1>These are available items</h1>
+        <h1>{!showItem ? "No item on display" : `Available items in ${cartegoryName} cartegory`}</h1>
         {showItem && <Items newProduct={products} updateCartPrice={updateCartPrice} />}
         <Routes>
           <Route path='./components/About.js' component={About} />

@@ -1,7 +1,9 @@
 .Header {
     position: relative;
     display: flex;
+    height: 2.5rem;
     justify-content: space-between;
+    align-items: center;
     background-color: #f8e2cd;
 }
 
@@ -14,10 +16,16 @@
 .Header .menu p {
     cursor: pointer;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 1.02rem;
     font-weight: 600;
     color: rgb(26, 25, 25);
     transition: ease-in-out 0.3s;
+}
+
+.Header .logo {
+    cursor: pointer;
+    font-weight: 900;
+    margin-left: 2rem;
 }
 
 .Header .menu p:hover {

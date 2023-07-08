@@ -8,7 +8,7 @@ function Header({ showCartPrice, icon, logo, home, product, about, contact, cart
 
     return (
         <div className="Header">
-            <p>{logo}</p>
+            <p className='logo'>{logo}</p>
             <div className='menu'>
                 <p>{home}</p>
                 <p>{product}</p>
