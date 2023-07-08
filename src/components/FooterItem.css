@@ -17,3 +17,21 @@
     color: #d8d5d5;
     margin-left: 1rem;
 }
+
+@media (max-width: 768px) {
+
+
+    .Footer-item:nth-child(1) {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .Footer-item {
+        margin-bottom: 1rem;
+    }
+
+    .Footer-item:nth-child(2) {
+        display: none;
+    }
+}

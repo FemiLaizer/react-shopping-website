@@ -17,6 +17,7 @@ function Header({ showCartPrice, icon, logo, home, product, about, contact, cart
                 <p onClick={(e) => showCartPrice(e.currentTarget)}>{cart}</p>
                 <p>{user}</p>
             </div>
+            <div id='cart-icon' onClick={(e) => showCartPrice(e.currentTarget)}>{cart}</div>
         </div>
     );
 }

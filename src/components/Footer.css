@@ -7,3 +7,10 @@
     color: #d8d5d5;
     background-color: rgb(43, 42, 42);
 }
+
+@media (max-width: 480px) {
+
+    .Footer {
+        flex-direction: column;
+    }
+}

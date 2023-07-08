@@ -60,6 +60,16 @@
   background-color: #dfe0e2;
 }
 
+@media (max-width: 1024px) {
+  .App .cartegory-selection {
+    flex-wrap: wrap;
+  }
+
+  .App .cartegory-selection span {
+    width: 2px;
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

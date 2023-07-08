@@ -1,7 +1,7 @@
 .Cartegory {
     /* border: 1px solid black; */
     width: 25%;
-    height: 350px;
+    height: 250px;
     margin-right: 1rem;
     margin-bottom: 1rem;
     cursor: pointer;
@@ -14,7 +14,7 @@
 .Cartegory .shade {
     position: absolute;
     width: 100%;
-    height: 350px;
+    height: 100%;
     top: 0;
     left: 0;
     border-radius: 0.65rem;
@@ -29,7 +29,7 @@
 
 .Cartegory img {
     width: 100%;
-    height: 350px;
+    height: 250px;
     border-radius: 0.65rem;
 }
 
@@ -40,4 +40,21 @@
     color: whitesmoke;
     text-shadow: 5px 2px 8px 3px rgb(10, 10, 10);
     z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .Cartegory {
+        /* border: 1px solid black; */
+        width: 40%;
+        height: 250px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .Cartegory {
+        /* border: 1px solid black; */
+        width: 80%;
+    }
 }

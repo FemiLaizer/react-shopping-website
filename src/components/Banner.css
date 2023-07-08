@@ -52,3 +52,38 @@
 
     border: 1px solid red;
 }
+
+@media (max-width: 768px) {
+
+    .Banner .banner {
+        justify-content: center;
+    }
+
+    .Banner .banner .banner-content {
+        margin-left: 1.5rem;
+    }
+
+    .Banner .banner .banner-content h1 {
+        font-size: 3rem;
+    }
+
+    .Banner .banner .banner-content p {
+        font-size: 1.06rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .Banner .banner .banner-content {
+        margin-left: 1.15rem;
+    }
+
+    .Banner .banner .banner-content h1 {
+        font-size: 0.7rem;
+        margin: 0;
+    }
+
+    .Banner .banner .banner-content p {
+        font-size: 1.06rem;
+    }
+}
