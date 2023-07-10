@@ -19,8 +19,6 @@
 }
 
 @media (max-width: 768px) {
-
-
     .Footer-item:nth-child(3) {
         display: none;
     }
@@ -28,7 +26,8 @@
 
 @media (max-width: 480px) {
     .Footer-item {
-        margin-bottom: 1rem;
+        margin-top: 1rem;
+        align-items: center;
     }
 
     .Footer-item:nth-child(2) {

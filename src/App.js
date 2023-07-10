@@ -20,7 +20,12 @@ function App() {
 
   const showCart = (e) => {
     if (e === "Sneakers") setshowItem(!showItem)
-    if (e !== "Sneakers") setshowPrice(!showPrice)
+    if (e !== "Sneakers") setshowItem(!showItem)
+  }
+
+  const closeCart = (e) => {
+    console.log(e);
+    if (e.textContent !== "Cart") setshowPrice(false)
   }
 
   const cartPrice = () => {
@@ -36,8 +41,8 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <Header showCartPrice={showCart} logo="SHoLOGO" home="Home" product="Product" about="About" contact="Contact" cart="Cart" user="User" />
+      <div className="App" onClick={(e) => showCart}>
+        <Header showCartPrice={() => setshowPrice(!showPrice)} logo="SHoLOGO" home="Home" product="Product" about="About" contact="Contact" cart="Cart" user="User" />
         {showPrice && <Cart cartPrice={cartPrice()} />}
 
         <Banner />

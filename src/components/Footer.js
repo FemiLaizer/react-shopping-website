@@ -9,7 +9,7 @@ const Footer = () => {
                 about="About"
                 contact="Contact"
                 user="Acount"
-                copy="Copyright & copy; 2023"
+                copy="Copyright &copy; 2023"
                 back="Back" />
 
             <FooterItem className='footer-item' home="Our Team"

@@ -4,7 +4,9 @@ import './Cart.css'
 const Cart = ({ cartPrice }) => {
     return (
         <div className="Cart">
-            <h2>Grand Total : N{cartPrice}</h2>
+            <h4>Your selection will appear below</h4>
+            <div className='selection'></div>
+            <h2 className='grand-total'>Grand Total : N{cartPrice}</h2>
             <Button text='Go To Payment' />
         </div>
     )
