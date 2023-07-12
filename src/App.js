@@ -7,10 +7,10 @@ import Banner from './components/Banner';
 import Items from './components/Items';
 import About from './components/About';
 import Cart from './components/Cart';
-
-import { category } from './components/CartShop'
-import { products } from './components/Products'
 import Cartegory from './components/Cartegory';
+
+import { category, products } from './components/Shop'
+
 
 function App() {
   const [showItem, setshowItem] = useState(true)
@@ -20,13 +20,13 @@ function App() {
 
   const showCart = (e) => {
     if (e === "Sneakers") setshowItem(!showItem)
-    if (e !== "Sneakers") setshowItem(!showItem)
+    // if (e !== "Sneakers") setshowItem(!showItem)
   }
 
-  const closeCart = (e) => {
-    console.log(e);
-    if (e.textContent !== "Cart") setshowPrice(false)
-  }
+  // const closeCart = (e) => {
+  //   console.log(e);
+  //   if (e.textContent !== "Cart") setshowPrice(false)
+  // }
 
   const cartPrice = () => {
     return totalPrice
