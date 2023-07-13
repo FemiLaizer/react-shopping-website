@@ -117,3 +117,5 @@ export const category = [
         qty: 1
     }
 ];
+
+export const selection = [];

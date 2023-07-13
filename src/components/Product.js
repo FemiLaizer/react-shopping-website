@@ -1,6 +1,6 @@
 import './Product.css';
 
-function Product({ id, img, name, details, price, qty, updateQty }) {
+function Product({ id, img, name, details, price, qty, updateQty, addToCart, updateCartPrice, products }) {
     return (
         <div className="Product">
             <div className='img'>
@@ -17,7 +17,9 @@ function Product({ id, img, name, details, price, qty, updateQty }) {
                     <button className='MinusBtn' onClick={() => updateQty(id, qty - 1)} disabled={qty === 0 ? true : false}>-</button>
                     <p>{qty}</p>
                     <button className='AddBtn' onClick={() => updateQty(id, qty + 1)}>+</button>
-                    <button className='AddItem' >Add Item</button>
+                    <button className='AddItem'
+                        onClick={() => addToCart(name, qty, price * qty)}
+                        disabled={qty === 0 ? true : false}>Add Item</button>
                 </div>
             </div>
         </div>

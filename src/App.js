@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
@@ -9,41 +9,45 @@ import About from './components/About';
 import Cart from './components/Cart';
 import Cartegory from './components/Cartegory';
 
-import { category, products } from './components/Shop'
-
+import { category, products, selection } from './components/Shop'
 
 function App() {
+
   const [showItem, setshowItem] = useState(true)
   const [showPrice, setshowPrice] = useState(false)
-
-  let [totalPrice, settotalPrice] = useState(0)
+  const [cartegoryName, setCartegoryName] = useState("")
 
   const showCart = (e) => {
     if (e === "Sneakers") setshowItem(!showItem)
-    // if (e !== "Sneakers") setshowItem(!showItem)
   }
 
-  // const closeCart = (e) => {
-  //   console.log(e);
-  //   if (e.textContent !== "Cart") setshowPrice(false)
-  // }
+  // let [cartTotal, settotalPrice] = useState(0)
 
-  const cartPrice = () => {
-    return totalPrice
+  const [addedItem, setCartItem] = useState(selection)
+
+  const addToCart = (itemName, itemQty, itemPrice, itemId) => {
+    const newlyAdded = { name: itemName, qty: itemQty, price: itemPrice, id: itemId }
+    setCartItem([...addedItem, newlyAdded]);
   }
 
-  const updateCartPrice = (price) => {
-    totalPrice = price
-    settotalPrice(totalPrice)
+  const paymentMode = () => {
+    console.log("You are about to make payment");
+  }
+  const removeCartItem = () => {
+    console.log("Item removed from Cart!!!");
   }
 
-  const [cartegoryName, setCartegoryName] = useState("")
+  useEffect(() => {
+
+  },)
 
   return (
     <Router>
       <div className="App" onClick={(e) => showCart}>
-        <Header showCartPrice={() => setshowPrice(!showPrice)} logo="SHoLOGO" home="Home" product="Product" about="About" contact="Contact" cart="Cart" user="User" />
-        {showPrice && <Cart cartPrice={cartPrice()} />}
+        <Header showCartPrice={() => setshowPrice(!showPrice)}
+          logo="SHoLOGO" home="Home" product="Product"
+          about="About" contact="Contact" cart="Cart" user="User" />
+        {showPrice && <Cart addedItem={addedItem} paymentMode={paymentMode} removeCartItem={removeCartItem} />}
 
         <Banner />
         <div className='cartegory-selection'>
@@ -58,8 +62,8 @@ function App() {
             <Cartegory key={item.id} {...item} showCart={showCart} setCartegoryName={setCartegoryName} />
           ))}
         </div>
-        <h1>{!showItem ? "No item on display" : `Available items in ${cartegoryName} cartegory`}</h1>
-        {showItem && <Items newProduct={products} updateCartPrice={updateCartPrice} />}
+        <h1>{!showItem ? "No item on display" : `Available items in ${cartegoryName} category`}</h1>
+        {showItem && <Items newProduct={products} addToCart={addToCart} />}
         <Routes>
           <Route path='./components/About.js' component={About} />
         </Routes>

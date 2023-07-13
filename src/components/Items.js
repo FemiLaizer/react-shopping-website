@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Items.css';
 import Product from './Product';
 
-function Items({ newProduct, updateCartPrice }) {
+function Items({ newProduct, addToCart }) {
 
     const [products, setProducts] = useState(newProduct)
 
@@ -16,18 +16,13 @@ function Items({ newProduct, updateCartPrice }) {
         setProducts(newProducts);
     }
 
-    const grandTotal = products.reduce((productSum, item) => (
-        productSum + item.qty * item.price
-    ), 0).toFixed(2);
-
-    updateCartPrice(grandTotal);
-
     return (
         <div className="Items">
 
             <div className='itemBox'>
                 {products.map((item) => (
-                    <Product key={item.id} {...item} updateQty={updateQty} />
+                    <Product key={item.id} {...item}
+                        updateQty={updateQty} addToCart={addToCart} />
                 ))}
             </div>
 

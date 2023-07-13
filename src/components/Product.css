@@ -60,6 +60,12 @@
     border: 1px solid #570606;
 }
 
+.Product .qtyBox .qty .AddItem:disabled {
+    background-color: #f6f6f58f;
+    color: #4107077a;
+    border: 1px solid #57060667;
+}
+
 .Product .qtyBox .qty .MinusBtn:disabled {
     background-color: #f4c8c8;
 }

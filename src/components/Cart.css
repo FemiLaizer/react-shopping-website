@@ -5,8 +5,8 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: #ffffff;
-    /* width: 400px; */
-    height: 600px;
+    width: 800px;
+    /* height: 600px; */
     z-index: 100;
     position: absolute;
     top: 50%;
@@ -19,6 +19,9 @@
 }
 
 .Cart .selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0 auto;
     width: 90%;
     height: 60%;
