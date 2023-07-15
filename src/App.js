@@ -7,15 +7,16 @@ import Banner from './components/Banner';
 import Items from './components/Items';
 import About from './components/About';
 import Cart from './components/Cart';
-import Cartegory from './components/Cartegory';
+import Category from './components/Category';
 
 import { category, products, selection } from './components/Shop'
+import SearchBox from './components/SearchBox';
 
 function App() {
 
   const [showItem, setshowItem] = useState(true)
   const [showPrice, setshowPrice] = useState(false)
-  const [cartegoryName, setCartegoryName] = useState("")
+  const [categoryName, setCategoryName] = useState("")
 
   const showCart = (e) => {
     if (e === "Sneakers") setshowItem(!showItem)
@@ -28,13 +29,14 @@ function App() {
   const addToCart = (itemName, itemQty, itemPrice, itemId) => {
     const newlyAdded = { name: itemName, qty: itemQty, price: itemPrice, id: itemId }
     setCartItem([...addedItem, newlyAdded]);
+    alert(`${itemQty} ${itemName} added to Cart`)
   }
 
   const paymentMode = () => {
-    console.log("You are about to make payment");
+    alert("You are about to make payment");
   }
   const removeCartItem = () => {
-    console.log("Item removed from Cart!!!");
+    alert("Item removed from Cart!!!");
   }
 
   useEffect(() => {
@@ -50,19 +52,18 @@ function App() {
         {showPrice && <Cart addedItem={addedItem} paymentMode={paymentMode} removeCartItem={removeCartItem} />}
 
         <Banner />
-        <div className='cartegory-selection'>
-          <span></span>
+        <div className='category-selection'>
           {category.map(item => (
             <h4 key={item.id}><a href='./'>{item.name}</a></h4>
           ))}
-          <span></span>
+          <SearchBox />
         </div>
-        <div className='cartegory'>
+        <div className='category'>
           {category.map(item => (
-            <Cartegory key={item.id} {...item} showCart={showCart} setCartegoryName={setCartegoryName} />
+            <Category key={item.id} {...item} showCart={showCart} setCategoryName={setCategoryName} />
           ))}
         </div>
-        <h1>{!showItem ? "No item on display" : `Available items in ${cartegoryName} category`}</h1>
+        <h1>{!showItem ? "No item on display" : `Available items in ${categoryName} category`}</h1>
         {showItem && <Items newProduct={products} addToCart={addToCart} />}
         <Routes>
           <Route path='./components/About.js' component={About} />

@@ -12,6 +12,12 @@ const Cart = ({ addedItem, paymentMode, removeCartItem }) => {
         <div className="Cart">
             <h4>You have {addedItem.length} items in your Cart</h4>
             <div className='selection'>
+                <div className='selection-heading'>
+                    <h4>Name</h4>
+                    <h4>Qty</h4>
+                    <h4>Price</h4>
+                    <h4>Remove</h4>
+                </div>
                 {addedItem.map((item, i) => (
                     <AddedItem key={i} {...item} removeCartItem={removeCartItem} />
                 ))}

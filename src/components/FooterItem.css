@@ -5,6 +5,8 @@
     display: inline-block;
     text-align: left;
     color: #d8d5d5;
+    font-size: 1.6rem;
+    margin: 1.5rem;
     /* border: 1px solid red; */
 }
 
@@ -26,7 +28,7 @@
 
 @media (max-width: 480px) {
     .Footer-item {
-        margin-top: 1rem;
+        /* margin: 1rem; */
         align-items: center;
     }
 

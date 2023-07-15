@@ -1,7 +1,7 @@
 .SearchBox,
 .SearchBox .icon {
     display: flex;
-    background-color: rgba(245, 150, 61, 0.5);
+    /* background-color: rgba(245, 150, 61, 0.5); */
     /* background-color: #faf8e3; */
     justify-content: space-between;
     align-items: center;
@@ -16,17 +16,19 @@
 }
 
 .SearchBox .search {
+
     border: 0;
     outline: 0;
     width: 500px;
-    height: 26px;
-    border-radius: 0.4rem;
-    padding: 5px 10px;
-    background-color: rgba(250, 247, 245, 0.5);
+    /* height: 3rem; */
+    border-radius: 0.9rem;
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    background-color: rgb(250, 247, 245);
 }
 
 .SearchBox .search:hover {
-    background-color: rgba(250, 247, 245, 0.904);
+    background-color: rgba(250, 247, 245, 0.5);
 }
 
 .SearchBox .search::placeholder {

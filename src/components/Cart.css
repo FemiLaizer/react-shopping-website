@@ -29,6 +29,14 @@
     border: 1px solid rgb(129, 129, 129);
 }
 
+.Cart .selection-heading {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+}
+
 .Cart .grand-total {
     bottom: 0;
     color: rgb(82, 3, 3);

@@ -28,7 +28,7 @@
   color: #61dafb;
 }
 
-.App .cartegory {
+.App .category {
   /* border: 1px solid black; */
 
   display: flex;
@@ -39,33 +39,35 @@
   padding-top: 20px;
 }
 
-.App .cartegory-selection {
+.App .category-selection {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2rem 0;
 }
 
-.App .cartegory-selection h4 {
+.App .category-selection h4 {
   margin: 0.85rem;
+  font-size: 1.5rem;
 }
 
-.App .cartegory-selection h4 a {
+.App .category-selection h4 a {
   text-decoration: none;
   color: #555454;
 }
 
-.App .cartegory-selection span {
+.App .category-selection span {
   width: 200px;
   height: 1.2px;
   background-color: #dfe0e2;
 }
 
 @media (max-width: 1024px) {
-  .App .cartegory-selection {
+  .App .category-selection {
     flex-wrap: wrap;
   }
 
-  .App .cartegory-selection span {
+  .App .category-selection span {
     width: 2px;
   }
 }
