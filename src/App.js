@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react';
+import { React, useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
@@ -9,20 +9,34 @@ import About from './components/About';
 import Cart from './components/Cart';
 import Category from './components/Category';
 
-import { category, products, selection } from './components/Shop'
+import { category, initialProducts, selection } from './components/Shop'
 import SearchBox from './components/SearchBox';
 
 function App() {
 
-  const [showItem, setshowItem] = useState(true)
+  const [showItem, setshowItem] = useState(false)
   const [showPrice, setshowPrice] = useState(false)
   const [categoryName, setCategoryName] = useState("")
+  const [newCategory, setnewCategory] = useState(category)
 
   const showCart = (e) => {
-    if (e === "Sneakers") setshowItem(!showItem)
+    if (e === "Sneakers") {
+      setshowItem(!showItem)
+    } else {
+      setshowItem(showItem)
+    }
   }
 
-  // let [cartTotal, settotalPrice] = useState(0)
+  const filterCategory = (e) => {
+    // let filteredCategory = category
+    if (e.textContent === "All") {
+      setnewCategory(category)
+    } else {
+      const filteredCategory = category.filter(item =>
+        e.textContent === item.name)
+      setnewCategory(filteredCategory)
+    }
+  }
 
   const [addedItem, setCartItem] = useState(selection)
 
@@ -35,13 +49,15 @@ function App() {
   const paymentMode = () => {
     alert("You are about to make payment");
   }
-  const removeCartItem = () => {
+  const removeCartItem = (e) => {
     alert("Item removed from Cart!!!");
+    // console.log(e);
+    // console.log(addedItem);
+    // const newCartItem = addedItem.filter(item => item.name !== e.textContent)
+    // console.log(addedItem);
+    // console.log(newCartItem);
+    // setCartItem([...addedItem, newCartItem])
   }
-
-  useEffect(() => {
-
-  },)
 
   return (
     <Router>
@@ -53,18 +69,19 @@ function App() {
 
         <Banner />
         <div className='category-selection'>
+          <h4 ><a href='./' onMouseOver={(e) => filterCategory(e.currentTarget)}>All</a></h4>
           {category.map(item => (
-            <h4 key={item.id}><a href='./'>{item.name}</a></h4>
+            <h4 key={item.id} ><a href='./' onMouseOver={(e) => filterCategory(e.currentTarget)}>{item.name}</a></h4>
           ))}
           <SearchBox />
         </div>
         <div className='category'>
-          {category.map(item => (
+          {newCategory.map(item => (
             <Category key={item.id} {...item} showCart={showCart} setCategoryName={setCategoryName} />
           ))}
         </div>
-        <h1>{!showItem ? "No item on display" : `Available items in ${categoryName} category`}</h1>
-        {showItem && <Items newProduct={products} addToCart={addToCart} />}
+        <h1>{!showItem ? "No item on display" : `Available items in ${categoryName.toLowerCase()} category`}</h1>
+        {showItem && <Items initialProducts={initialProducts} addToCart={addToCart} />}
         <Routes>
           <Route path='./components/About.js' component={About} />
         </Routes>

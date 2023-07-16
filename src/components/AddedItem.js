@@ -1,4 +1,3 @@
-import Button from './Button'
 import './AddedItem.css'
 
 const AddedItem = ({ name, qty, price, removeCartItem }) => {
@@ -8,7 +7,7 @@ const AddedItem = ({ name, qty, price, removeCartItem }) => {
             <h5>{name}</h5>
             <h5>{qty}</h5>
             <h5>{price}</h5>
-            <Button text="X" padding="0 20px" height="10px" color="#520808" btnClick={() => removeCartItem()} />
+            <h3 id='remove' onClick={() => removeCartItem(name)}>&times;</h3>
         </div>
     )
 }

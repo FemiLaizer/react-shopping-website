@@ -1,10 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Items.css';
 import Product from './Product';
 
-function Items({ newProduct, addToCart }) {
+function Items({ initialProducts, addToCart }) {
 
-    const [products, setProducts] = useState(newProduct)
+    // Checking if there are products in the localstorage
+    const newProducts = JSON.parse(window.localStorage.getItem('products'))
+    const [products, setProducts] = useState(newProducts || initialProducts)
+
+    // useEffect to update and save into localstorage 
+    useEffect(() => {
+        window.localStorage.setItem('products', JSON.stringify(products))
+    }, [products])
 
     const updateQty = (id, newQty) => {
         const newProducts = products.map(product => {

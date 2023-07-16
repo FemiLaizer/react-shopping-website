@@ -24,13 +24,14 @@
     border-radius: 0.9rem;
     font-size: 1.4rem;
     padding: 10px 20px;
-    background-color: rgb(250, 247, 245);
+    background-color: #ffffff;
 }
 
-.SearchBox .search:hover {
+.SearchBox .search:focus {
+    border: 2px solid rgb(116, 116, 116);
     background-color: rgba(250, 247, 245, 0.5);
 }
 
 .SearchBox .search::placeholder {
-    color: rgba(97, 96, 96, 0.5);
+    color: rgba(43, 42, 42, 0.658);
 }
