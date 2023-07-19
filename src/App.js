@@ -46,17 +46,14 @@ function App() {
     alert(`${itemQty} ${itemName} added to Cart`)
   }
 
+  const removeCartItem = (id, name) => {
+    alert(`Item ${name} removed from Cart!!!`);
+    const newCartItem = addedItem.filter(item => item.id !== id)
+    setCartItem(newCartItem)
+  }
+
   const paymentMode = () => {
     alert("You are about to make payment");
-  }
-  const removeCartItem = (e) => {
-    alert("Item removed from Cart!!!");
-    // console.log(e);
-    // console.log(addedItem);
-    // const newCartItem = addedItem.filter(item => item.name !== e.textContent)
-    // console.log(addedItem);
-    // console.log(newCartItem);
-    // setCartItem([...addedItem, newCartItem])
   }
 
   return (
