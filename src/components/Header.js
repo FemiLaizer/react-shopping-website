@@ -3,8 +3,7 @@ import './Header.css'
 function Header({ showCartPrice, icon, logo, home, product, about, contact, cart, user }) {
 
     const priceDisplay = (e) => {
-        showCartPrice(e)
-        // closeCart(e)
+        showCartPrice()
     }
 
     return (

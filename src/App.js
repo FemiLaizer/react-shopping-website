@@ -9,15 +9,23 @@ import About from './components/About';
 import Cart from './components/Cart';
 import Category from './components/Category';
 
-import { category, initialProducts, selection } from './components/Shop'
+import { category } from './data/Shop'
+import { selection } from './data/Selection'
 import SearchBox from './components/SearchBox';
+
+const shopProducts = category.map(category => (
+  category.products
+))
 
 function App() {
 
-  const [showItem, setshowItem] = useState(false)
+  const [showItem, setshowItem] = useState(true)
   const [showPrice, setshowPrice] = useState(false)
   const [categoryName, setCategoryName] = useState("")
   const [newCategory, setnewCategory] = useState(category)
+  const [filteredProducts, setfilteredProducts] = useState(shopProducts)
+
+  console.log();
 
   const showCart = (e) => {
     if (e === "Sneakers") {
@@ -28,12 +36,10 @@ function App() {
   }
 
   const filterCategory = (e) => {
-    // let filteredCategory = category
+    const filteredCategory = ["All", ...category].filter(items => e.textContent === items.name)
     if (e.textContent === "All") {
       setnewCategory(category)
     } else {
-      const filteredCategory = category.filter(item =>
-        e.textContent === item.name)
       setnewCategory(filteredCategory)
     }
   }
@@ -56,6 +62,12 @@ function App() {
     alert("You are about to make payment");
   }
 
+  document.querySelector('body').addEventListener('click', (e) => {
+    if (e.target.textContent !== "Cart" && showPrice === true) {
+      setshowPrice(!showPrice)
+    }
+  })
+
   return (
     <Router>
       <div className="App" onClick={(e) => showCart}>
@@ -65,11 +77,14 @@ function App() {
         {showPrice && <Cart addedItem={addedItem} paymentMode={paymentMode} removeCartItem={removeCartItem} />}
 
         <Banner />
+
         <div className='category-selection'>
-          <h4 ><a href='./' onMouseOver={(e) => filterCategory(e.currentTarget)}>All</a></h4>
-          {category.map(item => (
-            <h4 key={item.id} ><a href='./' onMouseOver={(e) => filterCategory(e.currentTarget)}>{item.name}</a></h4>
+          {["All", ...category.map(item => item.name)].map((name, index) => (
+            <h4 key={index} onMouseOver={(e) => filterCategory(e.currentTarget)}>
+              {name}
+            </h4>
           ))}
+
           <SearchBox />
         </div>
         <div className='category'>
@@ -78,7 +93,8 @@ function App() {
           ))}
         </div>
         <h1>{!showItem ? "No item on display" : `Available items in ${categoryName.toLowerCase()} category`}</h1>
-        {showItem && <Items initialProducts={initialProducts} addToCart={addToCart} />}
+        {showItem && <Items initialProducts={shopProducts}
+          addToCart={addToCart} />}
         <Routes>
           <Route path='./components/About.js' component={About} />
         </Routes>

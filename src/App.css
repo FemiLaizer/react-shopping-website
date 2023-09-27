@@ -47,13 +47,15 @@
 }
 
 .App .category-selection h4 {
+  cursor: pointer;
   margin: 0.85rem;
   font-size: 1.5rem;
+  color: #555454;
+  transition: ease-in-out 0.5s;
 }
 
-.App .category-selection h4 a {
-  text-decoration: none;
-  color: #555454;
+.App .category-selection h4:hover {
+  text-decoration: underline;
 }
 
 .App .category-selection span {
