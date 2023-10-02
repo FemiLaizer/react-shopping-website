@@ -8,13 +8,14 @@ import Items from './components/Items';
 import About from './components/About';
 import Cart from './components/Cart';
 import Category from './components/Category';
+import Item from './components/Item';
 
 import { category } from './data/Shop'
 import { selection } from './data/Selection'
 import SearchBox from './components/SearchBox';
 
 const shopProducts = category.map(category => (
-  category.products
+  [...category.products]
 ))
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   const [categoryName, setCategoryName] = useState("")
   const [newCategory, setnewCategory] = useState(category)
   const [filteredProducts, setfilteredProducts] = useState(shopProducts)
+  const [viewItem, setViewItem] = useState(false)
 
   console.log();
 
@@ -42,6 +44,13 @@ function App() {
     } else {
       setnewCategory(filteredCategory)
     }
+  }
+
+  const [itemToView, setItemToView] = useState("")
+
+  const receivedItemToView = (receivedItem) => {
+    setViewItem(!viewItem)
+    setItemToView(receivedItem)
   }
 
   const [addedItem, setCartItem] = useState(selection)
@@ -63,8 +72,13 @@ function App() {
   }
 
   document.querySelector('body').addEventListener('click', (e) => {
-    if (e.target.textContent !== "Cart" && showPrice === true) {
-      setshowPrice(!showPrice)
+    // console.log(e.target);
+    // console.log(e.currentTarget);
+    if (!e.target && showPrice === true) {
+      setshowPrice(false)
+    }
+    if (!e.target && viewItem === true) {
+      setViewItem(false)
     }
   })
 
@@ -94,7 +108,8 @@ function App() {
         </div>
         <h1>{!showItem ? "No item on display" : `Available items in ${categoryName.toLowerCase()} category`}</h1>
         {showItem && <Items initialProducts={shopProducts}
-          addToCart={addToCart} />}
+          addToCart={addToCart} setView={(e) => receivedItemToView(e)} />}
+        {viewItem && <Item addToCart={addToCart} itemToView={itemToView} />}
         <Routes>
           <Route path='./components/About.js' component={About} />
         </Routes>

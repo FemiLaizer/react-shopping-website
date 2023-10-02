@@ -1,6 +1,12 @@
 import './Product.css';
 
-function Product({ id, img, name, details, price, qty, updateQty, addToCart, updateCartPrice, products }) {
+function Product({ item, updateQty, addToCart, updateCartPrice, products, setView }) {
+    const { id, img, name, details, price, qty } = { ...item }
+
+    const sendItem = (itemToView) => {
+        setView(itemToView)
+    }
+
     return (
         <div className="Product">
             <div className='img'>
@@ -23,7 +29,7 @@ function Product({ id, img, name, details, price, qty, updateQty, addToCart, upd
                     <button className='AddItem'
                         onClick={() => addToCart(name, qty, price * qty)}
                         disabled={qty === 0 ? true : false}>Add Item</button>
-                    <button className='AddItem'>View Item</button>
+                    <button className='AddItem' onClick={() => sendItem(item)}>View Item</button>
                 </div>
             </div>
         </div>

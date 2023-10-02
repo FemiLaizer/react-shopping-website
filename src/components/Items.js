@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import './Items.css';
 import Product from './Product';
 
-function Items({ initialProducts, addToCart }) {
+
+function Items({ initialProducts, addToCart, setView }) {
 
     // Checking if there are products in the localstorage
     const newProducts = JSON.parse(window.localStorage.getItem('products'))
     const [products, setProducts] = useState(initialProducts)
+
 
     // useEffect to update and save into localstorage 
     useEffect(() => {
@@ -29,8 +31,8 @@ function Items({ initialProducts, addToCart }) {
             <div className='itemBox'>
                 {products.map((items, i) => (
                     items.map((item, i) => (
-                        <Product key={i} {...item}
-                            updateQty={updateQty} addToCart={addToCart} />
+                        <Product key={i} item={item}
+                            updateQty={updateQty} addToCart={addToCart} setView={setView} />
                     ))
                 ))}
             </div>

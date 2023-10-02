@@ -18,8 +18,8 @@ const Cart = ({ addedItem, paymentMode, removeCartItem }) => {
                     <h4>Price</h4>
                     <h4>Remove</h4>
                 </div>
-                {addedItem.map((item) => (
-                    <AddedItem key={item.id} {...item} removeCartItem={removeCartItem} />
+                {addedItem.map((item, index) => (
+                    <AddedItem key={index} {...item} removeCartItem={removeCartItem} />
                 ))}
             </div>
             <h2 className='grand-total'>Grand Total : N{cartTotal}</h2>
